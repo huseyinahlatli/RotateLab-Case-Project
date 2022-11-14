@@ -46,9 +46,13 @@ namespace Abstract
                 var paper = bagStackList[lastIndex];
                 paper.transform.SetParent(deskArea);
                 bagStackList.Remove(paper);
-                var newPosition = new Vector3(-1.927f, 0f, 2.762f);
+
+                var deskAreaTransform = deskArea.transform;
+                var targetPosition = deskAreaTransform.position;
+                targetPosition.y += deskAreaTransform.childCount * Height;
+                
                 paper.transform.localRotation = Quaternion.identity;
-                paper.transform.DOMove(newPosition, Duration).SetEase(Ease.OutQuint);
+                paper.transform.DOMove(targetPosition, Duration).SetEase(Ease.OutQuint);
             }
         }
     }
