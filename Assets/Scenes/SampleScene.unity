@@ -569,7 +569,7 @@ Transform:
   m_Children:
   - {fileID: 846339196}
   m_Father: {fileID: 3786402052549362169}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &233484978
 MonoBehaviour:
@@ -1374,7 +1374,7 @@ Transform:
   - {fileID: 3872848748185116825}
   - {fileID: 649223692}
   m_Father: {fileID: 3786402052549362169}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &548020466
 GameObject:
@@ -2725,6 +2725,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4481731013709450, guid: b3e1ae4b20d1a0845a32d4418535010b, type: 3}
   m_PrefabInstance: {fileID: 894921054}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &943314170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 943314171}
+  m_Layer: 0
+  m_Name: Trash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &943314171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943314170}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3786402052549362169}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -5172,6 +5203,7 @@ Transform:
   - {fileID: 565893449}
   - {fileID: 886837169}
   - {fileID: 714463831}
+  - {fileID: 943314171}
   - {fileID: 542902079}
   - {fileID: 233484977}
   m_Father: {fileID: 0}
@@ -5189,6 +5221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d7536af5d75f79459a63894d09a5b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  employeeDeskArea: {fileID: 565893449}
+  employeeTrashArea: {fileID: 943314171}
 --- !u!114 &3786402052549362171
 MonoBehaviour:
   m_ObjectHideFlags: 0

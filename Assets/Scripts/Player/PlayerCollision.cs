@@ -10,7 +10,7 @@ namespace Player
         {
             playerBag = transform.GetChild(1).transform;
             deskArea = GameObject.FindGameObjectWithTag(StringCache.DeskArea).transform;
-        } 
+        }
         
         private void OnEnable()
         {
