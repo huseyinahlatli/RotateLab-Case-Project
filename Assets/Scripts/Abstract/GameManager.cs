@@ -1,39 +1,43 @@
 using System.Collections.Generic;
 using DG.Tweening;
+using Player;
 using Printer;
 using UnityEngine;
 
 namespace Abstract
 {
-    public abstract class PaperManager : MonoBehaviour
+    public abstract class GameManager : MonoBehaviour
     {
-        protected readonly List<GameObject> bagStackList = new();
-
-        [Header("Player Collision Settings")]
+        private readonly List<GameObject> bagStackList = new();
         protected Transform playerBag;
         protected Transform deskArea;
+        
         public static bool onCollectArea;
-        public static bool onDropArea;
-        protected const float Duration = .2f;
+        protected static bool onDropArea;
+        protected static bool onMoneyArea;
+        protected static bool onDroppingPaper;
+        
+        protected const float FixedDuration = .2f;
+        protected const float MoneyHeight = .1f;
         private const float Height = .05f;
         private const int StackLimit = 10;
 
-        // 3 --> Fonksiyon çağırıldı | Liste Dolu | PickArea Child'ler dolu | Toplama işlemi yapilacak.
         protected void CollectPaperFromTheArea() 
         {
-            if (playerBag.childCount < StackLimit) // En fazla 10 nesne alabilir
+            if (playerBag.childCount < StackLimit)
             {
                 var paperList = PrintPaper.PaperList;
                 var paper = paperList[^1];
-                bagStackList.Add(paper); // çantaya listesine ekle
-                paperList.Remove(paper); // genel listeden çikart
+                bagStackList.Add(paper);
+                paperList.Remove(paper);
                 paper.transform.SetParent(playerBag);
 
                 var newPosition = Vector3.zero;
                 paper.transform.localRotation = Quaternion.identity;
                 paper.transform.DOLocalJump
                 (
-                    new Vector3(newPosition.x, newPosition.y + (bagStackList.Count * Height) , newPosition.z), 1.0f, 1, Duration
+                    new Vector3(newPosition.x, newPosition.y + bagStackList.Count * Height , newPosition.z), 
+                    1.0f, 1, FixedDuration
                 ).SetEase(Ease.OutQuint);
             }
         }
@@ -42,6 +46,7 @@ namespace Abstract
         {
             if (playerBag.childCount > 0)
             {
+                onDroppingPaper = true;
                 var lastIndex = playerBag.childCount - 1;
                 var paper = bagStackList[lastIndex];
                 paper.transform.SetParent(deskArea);
@@ -52,7 +57,23 @@ namespace Abstract
                 targetPosition.y += deskAreaTransform.childCount * Height;
                 
                 paper.transform.localRotation = Quaternion.identity;
-                paper.transform.DOMove(targetPosition, Duration).SetEase(Ease.OutQuint);
+                paper.transform.DOMove(targetPosition, FixedDuration).SetEase(Ease.OutQuint);
+            }
+        }
+
+        protected void GetMoney() // < IndexError > CS:74
+        {
+            var moneyAreaTotalChild = MoneyManager.moneyArea.childCount;
+            var moneyList = MoneyManager.MoneyList;
+
+            if (moneyAreaTotalChild > 0)
+            {
+                var lastIndex = moneyAreaTotalChild - 1;
+                var money = moneyList[lastIndex];
+                
+                money.transform.SetParent(MoneyManager.moneyBox);
+                moneyList.Remove(money);
+                money.SetActive(false);
             }
         }
     }

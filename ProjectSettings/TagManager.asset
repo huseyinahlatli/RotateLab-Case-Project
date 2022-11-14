@@ -8,6 +8,7 @@ TagManager:
   - DropArea
   - MoneyArea
   - DeskArea
+  - MoneyBox
   layers:
   - Default
   - TransparentFX

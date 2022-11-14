@@ -12,7 +12,17 @@ namespace Employee
  
         private void Update()
         {
-            _velocity = EmployeeController.isEmployeeWorking ? 1.0f : 0.0f;
+            if (EmployeeController.isEmployeeWorking)
+            {
+                if(_velocity < 1.0f)
+                    _velocity += Time.deltaTime;
+            }
+            else
+            {
+                if(_velocity > 0.0f)
+                    _velocity -= Time.deltaTime;
+            }
+            
             _animator.SetFloat(VelocityHash, _velocity);
         }
     }

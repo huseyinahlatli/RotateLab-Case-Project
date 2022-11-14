@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Player
 {
-    public class PlayerCollision : PaperManager
+    public class PlayerTriggerHandler : GameManager
     {
         private void Awake()
         {
@@ -12,18 +12,19 @@ namespace Player
             deskArea = GameObject.FindGameObjectWithTag(StringCache.DeskArea).transform;
         }
         
-        private void OnEnable()
+        private void OnEnable() // 2 --> Coroutine'leri teke düşür!
         {
             StartCoroutine(CollectPaper());
             StartCoroutine(DropThePaper());
+            StartCoroutine(CollectMoney());
         }
 
         private IEnumerator CollectPaper()
         {
-            while (true)  // 2 --> Koşul sağlanıyorsa Fonksiyonu çağır
+            while (true)  
             {
                 if (onCollectArea) { CollectPaperFromTheArea(); }
-                yield return new WaitForSeconds(Duration);
+                yield return new WaitForSeconds(FixedDuration);
             }
         }
 
@@ -32,7 +33,17 @@ namespace Player
             while (true)
             {
                 if (onDropArea) { DropThePaperOnTheArea(); }
-                yield return new WaitForSeconds(Duration);
+                else { onDroppingPaper = false; }
+                yield return new WaitForSeconds(FixedDuration);
+            }
+        }
+
+        private IEnumerator CollectMoney()
+        {
+            while (true)
+            {
+                if (onMoneyArea && MoneyManager.moneyArea.childCount > 0) { GetMoney(); }
+                yield return new WaitForSeconds(FixedDuration);
             }
         }
 
@@ -43,6 +54,8 @@ namespace Player
                 onCollectArea = true;
             if (other.gameObject.CompareTag(StringCache.DropArea))
                 onDropArea = true;
+            if (other.gameObject.CompareTag(StringCache.MoneyArea))
+                onMoneyArea = true;
         }
 
         private void OnTriggerExit(Collider other)
@@ -51,6 +64,8 @@ namespace Player
                 onCollectArea = false;
             if (other.gameObject.CompareTag(StringCache.DropArea))
                 onDropArea = false;
+            if (other.gameObject.CompareTag(StringCache.MoneyArea))
+                onMoneyArea = false;
         }
         #endregion
     }
