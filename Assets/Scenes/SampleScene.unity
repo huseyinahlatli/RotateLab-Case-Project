@@ -4405,7 +4405,7 @@ GameObject:
   - component: {fileID: 1354079293}
   m_Layer: 0
   m_Name: PrintPaper
-  m_TagString: Untagged
+  m_TagString: PrintPaper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

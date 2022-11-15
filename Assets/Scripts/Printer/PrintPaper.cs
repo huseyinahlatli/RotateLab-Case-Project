@@ -12,7 +12,7 @@ namespace Printer
         [SerializeField] private GameObject paperPrefab;
         [SerializeField] private Transform pickArea;
 
-        private const float Duration = .1f;
+        private const float Duration = .25f;
         private const int MaxPaper = 20;
         private const float Height = .05f;
 
@@ -24,14 +24,14 @@ namespace Printer
             {
                 if (PaperList.Count < MaxPaper && !GameManager.onCollectArea)
                 {
-                    var paper = Instantiate(paperPrefab, pickArea.transform);
+                    var paper = Instantiate(paperPrefab, transform);
                     PaperList.Add(paper);
                     
                     paper.transform.DOJump
                     (
                         pickArea.transform.position + new Vector3(0.0f, PaperList.Count * Height, 0.0f)
                         , 1f, 1, Duration    
-                    ).SetEase(Ease.OutQuint);
+                    ).SetEase(Ease.OutQuad);
                 }
                 yield return new WaitForSeconds(Duration);
             }

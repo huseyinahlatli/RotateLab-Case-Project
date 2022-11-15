@@ -1,5 +1,5 @@
-using Singleton;
 using UnityEngine;
+using Singleton;
 
 namespace Player
 {

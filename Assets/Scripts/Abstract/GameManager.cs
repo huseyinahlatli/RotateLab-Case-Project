@@ -8,6 +8,7 @@ namespace Abstract
         protected readonly List<GameObject> bagStackList = new();
         protected Transform playerBag;
         protected Transform deskArea;
+        protected Transform printPaperArea;
         
         public static bool onCollectArea;
         protected static bool onDropArea;
@@ -15,10 +16,10 @@ namespace Abstract
         protected static bool onDroppingPaper;
         
         protected const float FixedDuration = .2f;
+        protected const float Duration = .5f;
         protected const float MoneyHeight = .1f;
         protected const float Height = .05f;
         protected const int StackLimit = 10;
-
-        protected int _cashAmount = 0;
+        protected int cashAmount = 0;
     }
 }
