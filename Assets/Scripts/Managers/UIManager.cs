@@ -1,7 +1,6 @@
-using System;
+using UnityEngine;
 using Singleton;
 using TMPro;
-using UnityEngine;
 
 namespace Managers
 {

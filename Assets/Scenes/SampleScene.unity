@@ -437,8 +437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 199374562}
   m_Layer: 0
-  m_Name: "\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC 
-    Managers"
+  m_Name: "\u25AC\u25AC\u25AC  Managers"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1107,8 +1106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 464315433}
   m_Layer: 0
-  m_Name: "\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC 
-    Environment"
+  m_Name: "\u25AC\u25AC\u25AC  Environment"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1348,7 +1346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &574240993
 Transform:
   m_ObjectHideFlags: 0
@@ -2214,7 +2212,7 @@ Transform:
   - {fileID: 1428991273}
   - {fileID: 450457345}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &829346882
 MonoBehaviour:
@@ -3739,11 +3737,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a0c5c31f3a72cb5489d25412535caaab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.524
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a0c5c31f3a72cb5489d25412535caaab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3278699
+      value: 1.23
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a0c5c31f3a72cb5489d25412535caaab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5452,7 +5450,7 @@ Transform:
   - {fileID: 1354079292}
   - {fileID: 548020467}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1766988225
 PrefabInstance:
@@ -6611,8 +6609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2127958910}
   m_Layer: 0
-  m_Name: "\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC\u25AC 
-    Scene"
+  m_Name: "\u25AC\u25AC\u25AC  Scene"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6877,7 +6874,7 @@ Transform:
   - {fileID: 542902079}
   - {fileID: 233484977}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3786402052549362170
 MonoBehaviour:
