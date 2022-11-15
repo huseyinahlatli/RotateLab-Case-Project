@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Abstract;
 using UnityEngine;
 
-namespace Player
+namespace Managers
 {
     public class MoneyManager : GameManager
     {

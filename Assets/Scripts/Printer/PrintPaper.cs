@@ -20,21 +20,18 @@ namespace Printer
 
         private IEnumerator PrintThePaper()
         {
-            var number = 0;
             while (true)
             {
                 if (PaperList.Count < MaxPaper && !GameManager.onCollectArea)
                 {
                     var paper = Instantiate(paperPrefab, pickArea.transform);
                     PaperList.Add(paper);
-                    paper.name = StringCache.Paper + number;
                     
                     paper.transform.DOJump
                     (
                         pickArea.transform.position + new Vector3(0.0f, PaperList.Count * Height, 0.0f)
                         , 1f, 1, Duration    
                     ).SetEase(Ease.OutQuint);
-                    number += 1;
                 }
                 yield return new WaitForSeconds(Duration);
             }

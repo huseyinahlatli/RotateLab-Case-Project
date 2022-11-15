@@ -1,6 +1,7 @@
 using System.Collections;
 using Abstract;
 using DG.Tweening;
+using Managers;
 using Player;
 using UnityEngine;
 
@@ -47,7 +48,7 @@ namespace Employee
             EarnMoney();
         }
 
-        private void EarnMoney() // Moneylere şekil şukul yapılabilir.
+        private void EarnMoney()
         {
             var moneyList = MoneyManager.MoneyList;
             var moneyAreaTransform = MoneyManager.moneyArea;
