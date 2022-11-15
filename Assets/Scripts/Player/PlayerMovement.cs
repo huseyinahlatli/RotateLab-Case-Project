@@ -13,10 +13,7 @@ namespace Player
         private Rigidbody _rigidbody;
         private Vector3 _movement;
         
-        private void Start()
-        {
-            _rigidbody = GetComponent<Rigidbody>();
-        }
+        private void Start() => _rigidbody = GetComponent<Rigidbody>();
 
         private void FixedUpdate()
         {

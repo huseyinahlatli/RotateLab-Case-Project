@@ -18,5 +18,7 @@ namespace Abstract
         protected const float MoneyHeight = .1f;
         protected const float Height = .05f;
         protected const int StackLimit = 10;
+
+        protected int _cashAmount = 0;
     }
 }

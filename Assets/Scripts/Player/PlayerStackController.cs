@@ -91,6 +91,7 @@ namespace Player
                 moneyList.Remove(money);
                 money.SetActive(false);
                 
+                UIManager.Instance.UpdateCash(_cashAmount += 1);
                 SoundManager.Instance.PlayCollectSound(SoundManager.Instance.moneySound, money.transform.position);
             }
         }

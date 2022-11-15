@@ -2,7 +2,6 @@ using System.Collections;
 using Abstract;
 using DG.Tweening;
 using Managers;
-using Player;
 using UnityEngine;
 
 namespace Employee
